@@ -28,3 +28,6 @@ export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 export PYTHONWARNINGS="ignore:Unverified HTTPS request"
 
 export NVM_DIR="$HOME/.nvm"
+
+## Keep it from sending output to less
+export AWS_PAGER=""

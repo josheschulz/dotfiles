@@ -1,5 +1,12 @@
 ## My theme
-PROMPT='%B%{$fg[blue]%}%m%f%b:[%0~ $(git_prompt_info)]%{$fg[green]%}$(virtualenv_prompt_info)%{$reset_color%} '
+python_info(){
+   VERSION=$(pyenv version-name)
+   if [[ $VERSION != system ]]; then
+      echo "[%{$fg[green]%}$VERSION%{$reset_color%}]"
+   fi 
+}
+
+PROMPT='%B%{$fg[blue]%}%m%f%b:[%0~ $(git_prompt_info)]$(python_info) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}%{$fg[red]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"

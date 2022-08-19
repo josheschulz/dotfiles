@@ -70,7 +70,7 @@ DISABLE_LS_COLORS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws_login_commands history schulz docker virtualenv)
+plugins=(aws_login_commands history schulz docker virtualenv nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,6 @@ export ZSHRC=LOADED
 #source $ZDOTDIR/history
 
 gfind(){
-   find . -path '*.git/*' -prune -o -path '*env/*' -prune -o -name '*.svn*' -prune -o -exec grep -IinHs $1 {} ';'
+   find . -path '*.terragrunt-cache/*' -prune -o -path '*.git/*' -prune -o -path '*env/*' -prune -o -name '*.svn*' -prune -o -exec grep -IinHs $1 {} ';' | cut -c 1-120 
 }
 
